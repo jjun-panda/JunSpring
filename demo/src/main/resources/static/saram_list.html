@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>사람목록</h1>
+    <table id="saramListTbl" border="1" width="100%"></table>
+
+    <script>
+    // ajax로 saramLIst 호출
+    // localhost 주소는 같고,  
+    // GET으로 요청하면 List
+    // POST로 요청하면 insert된다.
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function () {
+        var saramList = JSON.parse(this.responseText);
+        var saramListTbl = document.getElementById("saramListTbl");
+        saramListTbl.innerHTML = "";
+        for(var i=0; i<saramList.length; i++) {
+            var saram = saramList[i];
+            var row = `<tr>
+                        <td>${saram.idx}</td>
+                        <td>${saram.id}</td>
+                        <td>${saram.name}</td>
+                        </tr>`;
+            saramListTbl.innerHTML += row;
+        }
+    }
+    // http://localhost:8888/saram 대신 saram 써도 무방
+    xhttp.open("GET", "saram");
+    xhttp.send();
+    </script>
+</body>
+</html>
