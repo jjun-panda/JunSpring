@@ -1,0 +1,13 @@
+server:
+  port: 8899
+
+spring:
+  thymeleaf:
+    check-templatr-location: true
+
+  servlet:
+    multipart:
+#      location: /Users/jjun/Dev/SIAT/Jsp_Servlet/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/webapps/img
+      location: /Users/jjun/Dev
+      max-file-size: 10MB
+      max-request-size: 50MB

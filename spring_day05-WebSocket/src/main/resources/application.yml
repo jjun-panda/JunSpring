@@ -1,0 +1,6 @@
+server:
+  port: 9888
+spring:
+  devtools:
+    livereload:
+      enabled: true

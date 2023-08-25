@@ -1,0 +1,23 @@
+server:
+  port: 8222
+
+spring:
+  datasource:
+    url: jdbc:mysql://db.jjuns-c.com:3306/dbjjundesign?serverTimezone=Asia/Seoul # test 부분을 자신이 원하는 것으로 바꾸시면 됩니다. 
+    username: jjundesign # username과 password는 자신의 설정에 맞게
+    password: jjundesign2023
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create # 어플리케이션을 시작할 때 데이터베이스를 초기화하고 다시 테이블 생성
+    properties:
+      hibernate:
+      "[format_sql]": true # 실행되는 query를 보여줌
+
+logging.level:
+  "[org.hibernate.SQL]": debug
+  org:
+      hibernate: info
+      springframework:
+        security: debug

@@ -1,7 +1,0 @@
-server:
-  port: 8949
-  
-spring:
-  main:
-    banner-mode: off
-    web-application-type: servlet
